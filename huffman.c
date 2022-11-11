@@ -346,21 +346,21 @@ void descompactar(No *raiz) {
     No *aux = raiz;
 
     fseek(arquivo, lerTabelaFreq(arquivo), SEEK_SET);
-    int tamanho = tamanhoCompactado(raiz);//conta o numero de caracteres codificados no arquivo binario
-    string = calloc(tamanho + 2,sizeof(unsigned char));//aloca memoria de acordo com o numero de caracteres contados
+    int tamanho = tamanhoCompactado(raiz);
+    string = calloc(tamanho + 2,sizeof(unsigned char));
 
 
     if(arquivo){
-        while(fread(&byte, sizeof(unsigned char), 1, arquivo)){//enquanto nao dor o fim do arquivo
+        while(fread(&byte, sizeof(unsigned char), 1, arquivo)){
             for(i = 7; i >= 0; i--){
-                if(verificaBits(byte, i))//eh bit 1
+                if(verificaBits(byte, i))
                     aux = aux->direita;
                 else
-                    aux = aux->esquerda;//eh bit 0
+                    aux = aux->esquerda;
 
-                if(aux->esquerda == NULL && aux->direita == NULL){//chegou em um no folha
-                    string[j] = aux->caracter;//guarda o caracter do no folha na string
-                    aux = raiz;//volta para a raiz da arvore
+                if(aux->esquerda == NULL && aux->direita == NULL){
+                    string[j] = aux->caracter; //guarda o no folha na string que sera escrita novamente
+                    aux = raiz; //retorna ao inicio da arvore
                     j++;
                 }
             }
