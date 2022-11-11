@@ -51,7 +51,7 @@ void compactacao(unsigned char *string, int tamanho, unsigned int *tabela);
 unsigned int verificaBits(unsigned char byte, int i);
 int tamanhoCompactado(No* raiz);
 void escreverNoArq(char *string);
-void descompactar2(No *raiz);
+void descompactar(No *raiz);
 int tamanhoTxt(char nome_arquivo[]);
 void lerTxt(unsigned char *texto, char nome_arquivo[]);
 unsigned char* alocaMemoriaTexto(char nome_arquivo[]);

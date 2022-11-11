@@ -55,7 +55,7 @@ int main(){
         compactacao(codificado, tamanhoTab, tabela); //compacta o arquivo e ja cria o cabeçalho
         break;
     case 2:
-        descompactar2(arvore);
+        descompactar(arvore);
         break;
     default:
         break;

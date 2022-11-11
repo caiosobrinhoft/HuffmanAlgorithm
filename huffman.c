@@ -336,7 +336,7 @@ void escreverNoArq(char *string){
     fclose(arquivo);
 }
 
-void descompactar2(No *raiz) {
+void descompactar(No *raiz) {
     FILE *arquivo = fopen("compactado.huf", "rb");
     unsigned char byte;
     int i;
