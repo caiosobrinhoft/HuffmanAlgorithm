@@ -6,6 +6,14 @@
 #define TAM 256
 
 //Funcoes da tabela de frequencia
+int getFileSize(FILE *arq){
+    int fileSize = 0;
+    fseek(arq, 0, SEEK_END);
+    fileSize = ftell(arq);
+    
+    fseek(arq, 0, SEEK_SET);
+    return fileSize;
+}
 
 void iniciarTabelaFreq(unsigned int *tabela){
     int i = 0;

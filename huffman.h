@@ -15,7 +15,7 @@ typedef struct{
 	int tam;
 }Lista;
 
-
+int getFileSize(FILE *arq);
 //funcoes tabela frequencia
 void iniciarTabelaFreq(unsigned int *tabela);
 void preencherTabelaFreq(unsigned int *tabela, unsigned char *string);

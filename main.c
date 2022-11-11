@@ -53,6 +53,11 @@ int main(){
     {
     case 1:
         compactacao(codificado, tamanhoTab, tabela); //compacta o arquivo e ja cria o cabeçalho
+        output = fopen("compactado.huf", "rb");
+
+        printf("\nTamanho do arquivo de texto: %d", getFileSize(input));
+        printf("\nTamanho do arquivo compactado: %d", getFileSize(output));
+        printf("\nBytes economizados: %d\n", getFileSize(input)-getFileSize(output));
         break;
     case 2:
         descompactar(arvore);
